@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* 注意：这里不再写死背景图 url，改由 JS 控制 */
+    background-color: #333; /* 给个默认底色 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* 防止内容过多时背景截断 */
+    overflow-x: hidden;
+}
+
+.bg-overlay {
+    position: fixed; /* 改为 fixed 确保覆盖全屏 */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); /*稍微调亮一点点*/
+    z-index: -1;
+    backdrop-filter: blur(3px);
+}
+
+.container { text-align: center; z-index: 1; padding: 20px; }
+
+h1 { font-weight: 300; letter-spacing: 4px; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+
+/* === 新增：自定义时间输入框样式 === */
+.custom-time-box {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.custom-time-box input {
+    width: 60px;
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#set-time-btn {
+    padding: 8px 15px;
+    border: 1px solid #fff;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#set-time-btn:hover { background: #fff; color: #333; }
+/* ============================== */
+
+
+#timer-display {
+    font-size: 7rem; /* 稍微调小一点适应屏幕 */
+    font-weight: 700;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    font-variant-numeric: tabular-nums;
+    margin: 10px 0;
+}
+
+.buttons button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    margin: 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#start-btn { background-color: rgba(255, 255, 255, 0.9); color: #333; font-weight: bold; }
+#start-btn:hover { background-color: #fff; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.3); }
+
+#reset-btn { background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.5); color: #fff; }
+#reset-btn:hover { background-color: rgba(255, 255, 255, 0.3); }
+
+.sound-control { margin-top: 10px; font-size: 0.9rem; opacity: 0.8; }
+.sound-control input { margin-right: 8px; cursor: pointer; }
+
+
+/* === 新增：背景选择器样式 === */
+.bg-selector-box {
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+}
+
+.bg-selector-box p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* 图片之间的间距 */
+}
+
+.bg-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover; /* 保证图片不变形 */
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid transparent; /* 默认透明边框 */
+    transition: all 0.3s;
+    opacity: 0.7;
+}
+
+.bg-thumb:hover { opacity: 1; }
+
+/* 选中的图片加白色边框 */
+.bg-thumb.active {
+    border-color: #fff;
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+/* ============================ */

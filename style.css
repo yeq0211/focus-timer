@@ -129,3 +129,45 @@ h1 { font-weight: 300; letter-spacing: 4px; margin-bottom: 20px; text-shadow: 0 
     box-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 /* ============================ */
+/* === 新增：聊天室样式 === */
+.chat-room-box {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 400px; /* 限制最大宽度，别太宽了不好看 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+details {
+    background: rgba(0, 0, 0, 0.3); /* 深色半透明背景 */
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+details[open] {
+    background: rgba(0, 0, 0, 0.6); /* 展开时背景变深一点 */
+}
+
+summary {
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #ccc;
+    list-style: none; /* 去掉默认的小三角 */
+    padding: 5px;
+    user-select: none;
+}
+
+summary:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* 适配 Cbox 的 iframe，让它不要超出格子 */
+iframe {
+    width: 100% !important;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+/* ======================== */
